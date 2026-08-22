@@ -4,9 +4,9 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:lxbox/models/channel.dart';
-import 'package:lxbox/models/parser_config.dart';
-import 'package:lxbox/services/settings_storage.dart';
+import 'package:ncx_tunnel/models/channel.dart';
+import 'package:ncx_tunnel/models/parser_config.dart';
+import 'package:ncx_tunnel/services/settings_storage.dart';
 
 /// §125 F0.3 — миграция enabled_groups[] → channels[] (one-shot seed из template).
 ///
@@ -16,7 +16,7 @@ void main() {
   late Directory tmp;
   const channel = MethodChannel('plugins.flutter.io/path_provider');
 
-  String mainPath() => '${tmp.path}/lxbox_settings.json';
+  String mainPath() => '${tmp.path}/ncx_settings.json';
 
   // §267 — group_templates: общий channel-шаблон (direct+auto) для всех каналов
   // + default_channels vpn-1/vpn-2/vpn-3 + auto-подгруппа. Все каналы одинаковы
@@ -42,7 +42,7 @@ void main() {
 
   setUp(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    tmp = await Directory.systemTemp.createTemp('lxbox_channels_mig_');
+    tmp = await Directory.systemTemp.createTemp('ncx_channels_mig_');
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(channel, (call) async {
       if (call.method == 'getApplicationDocumentsDirectory' ||

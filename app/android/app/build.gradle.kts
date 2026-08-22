@@ -19,7 +19,7 @@ fun hasReleaseKeystore(): Boolean =
         !keystoreProperties.getProperty("storeFile").isNullOrBlank()
 
 android {
-    namespace = "com.leadaxe.lxbox"
+    namespace = "com.nativecodex.ncxtunnel"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -49,7 +49,7 @@ android {
     }
 
     defaultConfig {
-        applicationId = "com.leadaxe.lxbox"
+        applicationId = "com.nativecodex.ncxtunnel"
         // Android 7.0 (API 24) minimum — §233. Это абсолютный пол: Flutter
         // 3.41.x поддерживает минимум API 24, libbox.aar требует 23.
         // Приоритет тестирования и поддержки — 11+ (primary target window).
@@ -74,7 +74,7 @@ android {
         // (libbox 1.13 — 55-66 MB per ABI) gradle подтягивает для всех
         // ABI, и APK раздувается до ~76MB.
         //
-        // Сужаем через переменную окружения `LXBOX_ABI_FILTER` (выставляется
+        // Сужаем через переменную окружения `NCX_ABI_FILTER` (выставляется
         // в scripts/build-local-apk.sh). `-P` props из flutter build не
         // пробрасываются стабильно, env-var универсально срабатывает.
         // Если var не задан — поведение не меняется (CI-сборка по
@@ -89,10 +89,10 @@ android {
     // подтягиваются под все 3.
     //
     // Очищаем `ndk.abiFilters` и задаём только нужный ABI через env-var
-    // `LXBOX_ABI_FILTER` (выставляется в scripts/build-local-apk.sh).
+    // `NCX_ABI_FILTER` (выставляется в scripts/build-local-apk.sh).
     // Если var не задан — поведение не меняется (CI-сборка остаётся
     // универсальной для всех 3 ABI).
-    val abiFilterEnv: String? = System.getenv("LXBOX_ABI_FILTER")
+    val abiFilterEnv: String? = System.getenv("NCX_ABI_FILTER")
     if (!abiFilterEnv.isNullOrBlank()) {
         val keepAbis = abiFilterEnv.split(",").map { it.trim() }.toSet()
         defaultConfig.ndk.abiFilters.clear()

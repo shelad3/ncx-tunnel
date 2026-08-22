@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/services/traffic_profiler.dart';
-import 'package:lxbox/vpn/cc_channel.dart';
+import 'package:ncx_tunnel/services/traffic_profiler.dart';
+import 'package:ncx_tunnel/vpn/cc_channel.dart';
 
 /// §315 — трасса DNS-группы (kernel SPEC 035) в профайлере: маппинг полей
 /// стрима + перенос в `TrafficEvent.extra` для detail-sheet.

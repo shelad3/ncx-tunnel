@@ -13,16 +13,16 @@ import 'package:path_provider/path_provider.dart';
 /// comparison. См. spec docs/spec/features/076 settings-and-config-lifecycle.
 ///
 /// File paths:
-///   - lxbox_settings.json: `getApplicationDocumentsDirectory()` (path_provider)
+///   - ncx_settings.json: `getApplicationDocumentsDirectory()` (path_provider)
 ///   - singbox_config.json: тот же dir, имя из native ConfigManager.kt:12
 ///     (`CONFIG_FILE = "singbox_config.json"`). Path consistent потому что
 ///     native использует `Context.filesDir()` == `getApplicationDocumentsDirectory()`
 ///     на Android.
 class ConfigDirtyCheck {
-  static const _settingsFileName = 'lxbox_settings.json';
+  static const _settingsFileName = 'ncx_settings.json';
   static const _singboxConfigFileName = 'singbox_config.json';
 
-  /// Returns mtime of `lxbox_settings.json`. `null` если файл не существует
+  /// Returns mtime of `ncx_settings.json`. `null` если файл не существует
   /// (fresh install).
   static Future<DateTime?> settingsModifiedTime() async {
     return _mtimeOf(_settingsFileName);

@@ -2,11 +2,11 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/node_spec.dart';
-import 'package:lxbox/models/server_list.dart';
-import 'package:lxbox/screens/subscriptions_screen/clipboard_analysis.dart';
-import 'package:lxbox/services/parser/body_decoder.dart';
-import 'package:lxbox/services/parser/parse_all.dart';
+import 'package:ncx_tunnel/models/node_spec.dart';
+import 'package:ncx_tunnel/models/server_list.dart';
+import 'package:ncx_tunnel/screens/subscriptions_screen/clipboard_analysis.dart';
+import 'package:ncx_tunnel/services/parser/body_decoder.dart';
+import 'package:ncx_tunnel/services/parser/parse_all.dart';
 
 // §110 — Amnezia vpn://-ссылки. Энкодер-хелпер повторяет формат
 // qCompress: 4 байта big-endian длины + zlib-поток, base64url без padding.

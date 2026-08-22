@@ -4,13 +4,13 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/controllers/home_controller.dart';
-import 'package:lxbox/services/automation/event_emitter.dart';
-import 'package:lxbox/services/automation/handlers.dart' as automation;
-import 'package:lxbox/services/debug/context.dart';
-import 'package:lxbox/services/debug/contract/errors.dart';
-import 'package:lxbox/services/debug/debug_registry.dart';
-import 'package:lxbox/services/haptic_service.dart';
+import 'package:ncx_tunnel/controllers/home_controller.dart';
+import 'package:ncx_tunnel/services/automation/event_emitter.dart';
+import 'package:ncx_tunnel/services/automation/handlers.dart' as automation;
+import 'package:ncx_tunnel/services/debug/context.dart';
+import 'package:ncx_tunnel/services/debug/contract/errors.dart';
+import 'package:ncx_tunnel/services/debug/debug_registry.dart';
+import 'package:ncx_tunnel/services/haptic_service.dart';
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
@@ -30,9 +30,9 @@ class _FakePathProvider extends PathProviderPlatform
 void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
 
-  const methods = MethodChannel('com.leadaxe.lxbox/methods');
-  const ccStatus = MethodChannel('lxbox/cc/status');
-  const ccGroups = MethodChannel('lxbox/cc/groups');
+  const methods = MethodChannel('com.nativecodex.ncxtunnel/methods');
+  const ccStatus = MethodChannel('ncx/cc/status');
+  const ccGroups = MethodChannel('ncx/cc/groups');
   final messenger =
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
 

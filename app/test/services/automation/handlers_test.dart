@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/services/automation/handlers.dart';
-import 'package:lxbox/services/debug/context.dart';
-import 'package:lxbox/services/debug/contract/errors.dart';
-import 'package:lxbox/services/debug/debug_registry.dart';
+import 'package:ncx_tunnel/services/automation/handlers.dart';
+import 'package:ncx_tunnel/services/debug/context.dart';
+import 'package:ncx_tunnel/services/debug/contract/errors.dart';
+import 'package:ncx_tunnel/services/debug/debug_registry.dart';
 
 /// §047 — extracted action-handlers. Проверяем precondition-валидацию, которую
 /// handlers добавляют поверх контроллеров (она срабатывает до обращения к

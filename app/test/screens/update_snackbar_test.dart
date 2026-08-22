@@ -4,11 +4,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:lxbox/screens/home/home_dialogs.dart';
-import 'package:lxbox/services/install_source.dart';
-import 'package:lxbox/services/project_links.dart';
-import 'package:lxbox/services/settings_storage.dart';
-import 'package:lxbox/services/update_checker.dart';
+import 'package:ncx_tunnel/screens/home/home_dialogs.dart';
+import 'package:ncx_tunnel/services/install_source.dart';
+import 'package:ncx_tunnel/services/project_links.dart';
+import 'package:ncx_tunnel/services/settings_storage.dart';
+import 'package:ncx_tunnel/services/update_checker.dart';
 
 /// §390 — update-снек: три способа его увести и адрес перехода по каналу.
 ///
@@ -21,13 +21,13 @@ import 'package:lxbox/services/update_checker.dart';
 void main() {
   late Directory tmp;
   const ppChannel = MethodChannel('plugins.flutter.io/path_provider');
-  const utilsChannel = MethodChannel('com.leadaxe.lxbox/utils');
+  const utilsChannel = MethodChannel('com.nativecodex.ncxtunnel/utils');
   final calls = <MethodCall>[];
 
   const info = UpdateInfo(
     tag: 'v2.18.0',
     name: 'v2.18.0',
-    htmlUrl: 'https://github.com/Leadaxe/LxBox/releases/tag/v2.18.0',
+    htmlUrl: 'https://github.com/shelad3/ncx-tunnel/releases/tag/v2.18.0',
   );
 
   setUp(() async {
@@ -36,7 +36,7 @@ void main() {
     // ничего не нажав. Здесь это ловушка: половина кейсов проверяет ОТСУТСТВИЕ
     // side-effect'а и была бы ложно-зелёной.
     WidgetController.hitTestWarningShouldBeFatal = true;
-    tmp = await Directory.systemTemp.createTemp('lxbox_updatesnack_');
+    tmp = await Directory.systemTemp.createTemp('ncx_updatesnack_');
     calls.clear();
     final m = TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
     m.setMockMethodCallHandler(ppChannel, (call) async {

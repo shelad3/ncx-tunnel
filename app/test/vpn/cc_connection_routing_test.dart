@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:lxbox/vpn/cc_channel.dart';
-import 'package:lxbox/services/traffic_profiler.dart';
+import 'package:ncx_tunnel/vpn/cc_channel.dart';
+import 'package:ncx_tunnel/services/traffic_profiler.dart';
 
 /// §204 — `CcConnection.routingLineOf` обязан давать строку, ИДЕНТИЧНУЮ
 /// `TrafficEvent.routingLineOf` на тех же данных (один источник chains/detours

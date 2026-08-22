@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/node_spec.dart';
-import 'package:lxbox/models/singbox_entry.dart';
-import 'package:lxbox/models/template_vars.dart';
-import 'package:lxbox/services/parser/uri_parsers.dart';
+import 'package:ncx_tunnel/models/node_spec.dart';
+import 'package:ncx_tunnel/models/singbox_entry.dart';
+import 'package:ncx_tunnel/models/template_vars.dart';
+import 'package:ncx_tunnel/services/parser/uri_parsers.dart';
 
 /// §130 — MasqueSpec emit (Outbound-схема ядра) + URI round-trip.
 void main() {

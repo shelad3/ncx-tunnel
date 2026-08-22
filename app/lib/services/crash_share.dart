@@ -34,7 +34,7 @@ Future<bool> shareCrashReport(CrashReportFile report) async {
     // ignore: deprecated_member_use
     await Share.shareXFiles(
       files,
-      subject: 'L×Box core crash — ${report.mtime.toIso8601String()}',
+      subject: 'NCX Tunnel core crash — ${report.mtime.toIso8601String()}',
     );
     return true;
   } catch (_) {

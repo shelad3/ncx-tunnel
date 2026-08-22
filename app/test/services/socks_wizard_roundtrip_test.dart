@@ -1,10 +1,10 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/node_spec.dart';
-import 'package:lxbox/models/server_list.dart';
-import 'package:lxbox/models/template_vars.dart';
-import 'package:lxbox/services/parser/uri_utils.dart' show newUuidV4;
+import 'package:ncx_tunnel/models/node_spec.dart';
+import 'package:ncx_tunnel/models/server_list.dart';
+import 'package:ncx_tunnel/models/template_vars.dart';
+import 'package:ncx_tunnel/services/parser/uri_utils.dart' show newUuidV4;
 
 /// §074 — verify SocksSpec → JSON outbound → UserServer round-trip
 /// preserves user-chosen tag verbatim.

@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:lxbox/models/custom_rule.dart';
-import 'package:lxbox/services/builder/post_steps.dart';
-import 'package:lxbox/services/builder/rule_set_registry.dart';
+import 'package:ncx_tunnel/models/custom_rule.dart';
+import 'package:ncx_tunnel/services/builder/post_steps.dart';
+import 'package:ncx_tunnel/services/builder/rule_set_registry.dart';
 
 void main() {
   group('applyCustomRules — inline', () {

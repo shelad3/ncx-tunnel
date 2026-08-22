@@ -1,12 +1,12 @@
-L×Box is a high-performance proxy client with no compromises.
+NCX Tunnel is a high-performance proxy client with no compromises.
 
-You choose the servers. You set the rules. You control the traffic. L×Box does exactly what you told it to.
+You choose the servers. You set the rules. You control the traffic. NCX Tunnel does exactly what you told it to.
 
 12+ protocols, advanced routing, full DNS control, detour chains, per-app split tunneling and built-in diagnostics. No account, no ads, no analytics. No server network of our own.
 
 THE CORE IS OURS
 
-L×Box runs on sing-box-lx, our own fork of sing-box, developed together with the app. On top of stock sing-box the core adds:
+NCX Tunnel runs on sing-box-lx, our own fork of sing-box, developed together with the app. On top of stock sing-box the core adds:
 
 • AmneziaWG 2.0 — obfuscated WireGuard;
 • XHTTP — Xray transport, including stream-one;
@@ -34,7 +34,7 @@ Import any familiar format: subscriptions and links, Base64, Xray arrays, WireGu
 
 SUBSCRIPTIONS WITHOUT MANUAL WORK
 
-Add a subscription — L×Box parses it and creates nodes with no duplicates. Unwanted nodes can be switched off and stay off through every update, even if the provider renames them.
+Add a subscription — NCX Tunnel parses it and creates nodes with no duplicates. Unwanted nodes can be switched off and stay off through every update, even if the provider renames them.
 
 Processing rules with regex and capture groups rename, rewrite or disable nodes on every refresh — and show in advance which nodes a rule will hit.
 
@@ -60,13 +60,13 @@ Works with automation tools (such as Tasker or MacroDroid): start, stop, switch 
 
 WE SEND YOUR DATA NOWHERE
 
-No account. No ads, no analytics, no advertising ID, no crash reporters. L×Box connects only to the servers and update endpoints you configured. Full backup and restore moves your setup to a new device.
+No account. No ads, no analytics, no advertising ID, no crash reporters. NCX Tunnel connects only to the servers and update endpoints you configured. Full backup and restore moves your setup to a new device.
 
 A CLIENT, NOT A VPN SERVICE
 
-L×Box provides no servers and sells no access to anyone's network — you choose your servers and subscriptions.
+NCX Tunnel provides no servers and sells no access to anyone's network — you choose your servers and subscriptions.
 
 OPEN SOURCE
 
 Free software under GPLv3. English and Russian UI, light and dark themes.
-GitHub: github.com/Leadaxe/LxBox
+GitHub: github.com/shelad3/ncx-tunnel

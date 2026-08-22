@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/import_rule.dart';
-import 'package:lxbox/models/server_list.dart';
-import 'package:lxbox/models/subscription_meta.dart';
+import 'package:ncx_tunnel/models/import_rule.dart';
+import 'package:ncx_tunnel/models/server_list.dart';
+import 'package:ncx_tunnel/models/subscription_meta.dart';
 
 void main() {
   group('ServerList JSON round-trip', () {

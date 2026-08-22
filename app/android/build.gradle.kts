@@ -20,6 +20,12 @@ subprojects {
     project.evaluationDependsOn(":app")
 }
 
+// NCX fork: plugins pin their own ndkVersion (e.g. flutter_zxing wants
+// 27.0.12077973); AGP would auto-download each requested NDK (~700 MB each).
+// The pub package is patched by scripts/patch-pub-ndk.sh after `pub get`
+// (wired into scripts/build-local-apk.sh) so every module uses the single
+// locally-installed NDK below.
+
 // §380 — build-id нативных .so отключён ради воспроизводимости.
 //
 // NDK по умолчанию передаёт `-Wl,--build-id=sha1` всем CMake-сборкам

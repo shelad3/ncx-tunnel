@@ -273,7 +273,7 @@
         },
         {"name": "tun_address6", "type": "text", "default_value": "fdfe:dcba:9876::1/126", "wizard_ui": "edit", "title": "IPv6 address", "tooltip": "TUN interface IPv6 address (CIDR). Applied only when Enable IPv6 is on."},
         {"name": "route_address_enable", "type": "bool", "default_value": "false", "wizard_ui": "edit", "title": "Custom tunnel routes", "tooltip": "Route all IPv4 and IPv6 through the tunnel via explicit half-ranges instead of sing-box defaults. Off by default — turn on only if the default routing misbehaves."},
-        {"name": "tun_name", "type": "text", "default_value": "lxbox", "wizard_ui": "edit", "title": "TUN interface", "tooltip": "system name"},
+        {"name": "tun_name", "type": "text", "default_value": "ncx", "wizard_ui": "edit", "title": "TUN interface", "tooltip": "system name"},
         {"name": "tun_mtu", "type": "int", "default_value": "1492", "wizard_ui": "edit", "title": "MTU", "tooltip": "1492 recommended for mobile/WiFi"},
         {"name": "tun_auto_route", "type": "bool", "default_value": "true", "wizard_ui": "edit", "title": "Auto route", "tooltip": "Let sing-box manage routing table"},
         {"name": "tun_strict_route", "type": "bool", "default_value": "false", "wizard_ui": "edit", "title": "Strict route", "tooltip": "May break connectivity on some devices"},

@@ -3,8 +3,8 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/memory_limit_setting.dart';
-import 'package:lxbox/services/settings_storage.dart';
+import 'package:ncx_tunnel/models/memory_limit_setting.dart';
+import 'package:ncx_tunnel/services/settings_storage.dart';
 
 /// §271 — memory_limit в §189 native_prefs: default, write-through (JSON +
 /// method channel), нормализация мусора, участие в backup-блоке vpn_settings.
@@ -12,7 +12,7 @@ void main() {
   TestWidgetsFlutterBinding.ensureInitialized();
   late Directory tmp;
   const pathChannel = MethodChannel('plugins.flutter.io/path_provider');
-  const methodsChannel = MethodChannel('com.leadaxe.lxbox/methods');
+  const methodsChannel = MethodChannel('com.nativecodex.ncxtunnel/methods');
   final messenger =
       TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger;
   final nativeCalls = <MethodCall>[];
@@ -20,7 +20,7 @@ void main() {
   String nativeValue = MemoryLimitSetting.auto;
 
   setUp(() async {
-    tmp = await Directory.systemTemp.createTemp('lxbox_native_prefs_test_');
+    tmp = await Directory.systemTemp.createTemp('ncx_native_prefs_test_');
     nativeCalls.clear();
     nativeValue = MemoryLimitSetting.auto;
     messenger.setMockMethodCallHandler(pathChannel, (call) async {
@@ -60,13 +60,13 @@ void main() {
   });
 
   Future<void> seedFile(Map<String, dynamic> data) async {
-    final f = File('${tmp.path}/lxbox_settings.json');
+    final f = File('${tmp.path}/ncx_settings.json');
     await f.writeAsString(jsonEncode(data));
     SettingsStorage.resetCacheForTesting();
   }
 
   Future<Map<String, dynamic>> readFile() async {
-    final f = File('${tmp.path}/lxbox_settings.json');
+    final f = File('${tmp.path}/ncx_settings.json');
     return jsonDecode(await f.readAsString()) as Map<String, dynamic>;
   }
 

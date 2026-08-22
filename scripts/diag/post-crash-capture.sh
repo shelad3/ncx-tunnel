@@ -10,7 +10,7 @@
 #   - tun0 / route table state (если VPN ещё активен)
 #   - device info (versionCode проверка)
 #
-# Output: /tmp/lxbox-crash-<ts>/
+# Output: /tmp/ncx-crash-<ts>/
 #
 # Usage:
 #   ./scripts/diag/post-crash-capture.sh
@@ -19,7 +19,7 @@
 set -uo pipefail
 
 TS="$(date +%Y-%m-%d-%H%M%S)"
-OUT_DIR="/tmp/lxbox-crash-$TS"
+OUT_DIR="/tmp/ncx-crash-$TS"
 DEVICE_ARG=""
 
 while [[ $# -gt 0 ]]; do
@@ -65,8 +65,8 @@ echo "→ device.txt"
   echo "=== getprop ==="
   adb $DEVICE_ARG shell getprop | grep -iE "ro.product.model|ro.build.version|ro.product.cpu.abi" | head -10
   echo
-  echo "=== dumpsys package com.leadaxe.lxbox | head ==="
-  adb $DEVICE_ARG shell "dumpsys package com.leadaxe.lxbox 2>/dev/null | head -30"
+  echo "=== dumpsys package com.leadaxe.ncx | head ==="
+  adb $DEVICE_ARG shell "dumpsys package com.leadaxe.ncx 2>/dev/null | head -30"
 } > "$OUT_DIR/device.txt" 2>&1
 
 # 2. Logcat dump — последние 5000 строк всего (без filter — фильтруем потом grep'ом)
@@ -74,9 +74,9 @@ echo "→ logcat-all.txt (5000 lines)"
 adb $DEVICE_ARG logcat -d -t 5000 > "$OUT_DIR/logcat-all.txt" 2>&1
 
 # Прицельный фильтр на наш TAG + crash signatures
-echo "→ logcat-lxbox.txt (filtered)"
-grep -E "BoxVpnService|libbox|VpnPlugin|BoxApplication|sing-box|FATAL|SIGABRT|tombstone|com.leadaxe.lxbox|libc|DEBUG.*pid" \
-  "$OUT_DIR/logcat-all.txt" > "$OUT_DIR/logcat-lxbox.txt" 2>&1 || true
+echo "→ logcat-ncx.txt (filtered)"
+grep -E "BoxVpnService|libbox|VpnPlugin|BoxApplication|sing-box|FATAL|SIGABRT|tombstone|com.leadaxe.ncx|libc|DEBUG.*pid" \
+  "$OUT_DIR/logcat-all.txt" > "$OUT_DIR/logcat-ncx.txt" 2>&1 || true
 
 # 3. Native crash dropbox (если есть)
 echo "→ dropbox.txt"
@@ -92,11 +92,11 @@ adb $DEVICE_ARG shell "ls -la /data/tombstones/ 2>/dev/null" > "$OUT_DIR/tombsto
 # 5. dumpsys для нашего сервиса
 echo "→ dumpsys-service.txt"
 {
-  echo "=== dumpsys activity service com.leadaxe.lxbox/.vpn.BoxVpnService ==="
-  adb $DEVICE_ARG shell "dumpsys activity service com.leadaxe.lxbox/.vpn.BoxVpnService 2>/dev/null"
+  echo "=== dumpsys activity service com.leadaxe.ncx/.vpn.BoxVpnService ==="
+  adb $DEVICE_ARG shell "dumpsys activity service com.leadaxe.ncx/.vpn.BoxVpnService 2>/dev/null"
   echo
   echo "=== dumpsys meminfo ==="
-  adb $DEVICE_ARG shell "dumpsys meminfo com.leadaxe.lxbox 2>/dev/null | head -50"
+  adb $DEVICE_ARG shell "dumpsys meminfo com.leadaxe.ncx 2>/dev/null | head -50"
 } > "$OUT_DIR/dumpsys-service.txt" 2>&1
 
 # 6. tun0 / network state (если VPN жив)
@@ -124,9 +124,9 @@ else
   echo "○ нет FATAL/SIGABRT в logcat"
 fi
 echo
-if [ -s "$OUT_DIR/logcat-lxbox.txt" ]; then
+if [ -s "$OUT_DIR/logcat-ncx.txt" ]; then
   echo "Last 20 BoxVpnService events:"
-  grep BoxVpnService "$OUT_DIR/logcat-lxbox.txt" | tail -20
+  grep BoxVpnService "$OUT_DIR/logcat-ncx.txt" | tail -20
 else
   echo "○ нет BoxVpnService events в captured logcat"
 fi

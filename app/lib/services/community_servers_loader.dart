@@ -33,7 +33,7 @@ class CommunityServersLoader {
   CommunityServersLoader._();
 
   static const manifestUrl =
-      'https://raw.githubusercontent.com/Leadaxe/LxBox/main/public-servers-manifest.json';
+      'https://raw.githubusercontent.com/shelad3/ncx-tunnel/main/public-servers-manifest.json';
   static const _timeout = Duration(seconds: 5);
 
   static CommunityManifest? _cached;

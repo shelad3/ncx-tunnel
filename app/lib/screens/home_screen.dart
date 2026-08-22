@@ -605,7 +605,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver, Ti
     ));
   }
 
-  /// §357 — резолв lxbox-действия в экран приложения. null → кнопка
+  /// §357 — резолв ncx-действия в экран приложения. null → кнопка
   /// скрывается (незнакомый маршрут у старой версии / гейт не прошёл).
   /// Контроллеры живут здесь — по той же причине, по которой экраны строит
   /// HomeDrawer.
@@ -734,7 +734,7 @@ class _HomeScreenState extends State<HomeScreen> with WidgetsBindingObserver, Ti
         );
         return Scaffold(
           // l10n-exempt: brand name, идентичен во всех локалях
-          appBar: AppBar(title: const Text('L×Box')),
+          appBar: AppBar(title: const Text('NCX Tunnel')),
           drawer: HomeDrawer(
             controller: _controller,
             subController: _subController,

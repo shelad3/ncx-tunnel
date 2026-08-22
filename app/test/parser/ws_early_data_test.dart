@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/node_spec.dart';
-import 'package:lxbox/models/template_vars.dart';
-import 'package:lxbox/models/transport_spec.dart';
-import 'package:lxbox/services/parser/json_parsers.dart';
-import 'package:lxbox/services/parser/transport.dart';
+import 'package:ncx_tunnel/models/node_spec.dart';
+import 'package:ncx_tunnel/models/template_vars.dart';
+import 'package:ncx_tunnel/models/transport_spec.dart';
+import 'package:ncx_tunnel/services/parser/json_parsers.dart';
+import 'package:ncx_tunnel/services/parser/transport.dart';
 
 /// §303 — WebSocket early data. Xray задаёт её хвостом пути (`/x?ed=2560`),
 /// sing-box — полем `max_early_data`. Раньше хвост уезжал в `transport.path`

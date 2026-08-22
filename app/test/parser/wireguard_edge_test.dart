@@ -1,9 +1,9 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/node_spec.dart';
-import 'package:lxbox/models/template_vars.dart';
-import 'package:lxbox/services/parser/json_parsers.dart';
-import 'package:lxbox/services/parser/uri_parsers/wireguard_parser.dart';
-import 'package:lxbox/services/parser/uri_utils.dart';
+import 'package:ncx_tunnel/models/node_spec.dart';
+import 'package:ncx_tunnel/models/template_vars.dart';
+import 'package:ncx_tunnel/services/parser/json_parsers.dart';
+import 'package:ncx_tunnel/services/parser/uri_parsers/wireguard_parser.dart';
+import 'package:ncx_tunnel/services/parser/uri_utils.dart';
 
 /// §106 — WG/AWG edge cases: raw-`/` в ключе + bare IP без CIDR.
 void main() {

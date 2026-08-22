@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/home_state.dart';
-import 'package:lxbox/screens/home/widgets/app_banner.dart';
+import 'package:ncx_tunnel/models/home_state.dart';
+import 'package:ncx_tunnel/screens/home/widgets/app_banner.dart';
 
 /// §116 — `activeBanners` это чистая проекция состояния → список плашек.
 /// Тестируем маппинг каждого guard'а и взаимные исключения.

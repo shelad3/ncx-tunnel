@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # §219 — общий adb-path bootstrap. Раньше дублировался в install-apk.sh /
-# ensure-wifi-adb.sh / lxbox-diag.sh / diag/post-crash-capture.sh (в последнем
-# даже с явным комментом «то же что в lxbox-diag.sh»).
+# ensure-wifi-adb.sh / ncx-diag.sh / diag/post-crash-capture.sh (в последнем
+# даже с явным комментом «то же что в ncx-diag.sh»).
 #
 # ensure_adb_path: если adb не в PATH — добавляет ANDROID_SDK_ROOT/platform-tools
 # и проверяет снова. Возвращает 0 если adb доступен, 1 иначе. Стратегию (fail vs

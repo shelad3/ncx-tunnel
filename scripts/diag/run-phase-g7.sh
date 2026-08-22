@@ -14,10 +14,10 @@
 set -euo pipefail
 
 cd "$(dirname "$0")/../.."
-DEVICE="${LXBOX_DEVICE:-192.168.1.71:5555}"
+DEVICE="${NCX_DEVICE:-192.168.1.71:5555}"
 
-PIW_FILE=app/android/app/src/main/kotlin/com/leadaxe/lxbox/vpn/PlatformInterfaceWrapper.kt
-APP_FILE=app/android/app/src/main/kotlin/com/leadaxe/lxbox/vpn/BoxApplication.kt
+PIW_FILE=app/android/app/src/main/kotlin/com/leadaxe/ncx/vpn/PlatformInterfaceWrapper.kt
+APP_FILE=app/android/app/src/main/kotlin/com/leadaxe/ncx/vpn/BoxApplication.kt
 PIW_BAK=$(mktemp)
 APP_BAK=$(mktemp)
 
@@ -41,7 +41,7 @@ cp "$APP_FILE" "$APP_BAK"
 echo "── apply F12.3 enabled (provoke crash) ──"
 python3 - << 'PYEOF'
 import pathlib
-p = pathlib.Path("app/android/app/src/main/kotlin/com/leadaxe/lxbox/vpn/PlatformInterfaceWrapper.kt")
+p = pathlib.Path("app/android/app/src/main/kotlin/com/leadaxe/ncx/vpn/PlatformInterfaceWrapper.kt")
 src = p.read_text()
 new_impl = '''
     /// Phase G7 diagnostic — F12.3 enabled to provoke crash.
@@ -67,7 +67,7 @@ PYEOF
 echo "── apply dummy pre-allocation in BoxApplication ──"
 python3 - << 'PYEOF'
 import pathlib
-p = pathlib.Path("app/android/app/src/main/kotlin/com/leadaxe/lxbox/vpn/BoxApplication.kt")
+p = pathlib.Path("app/android/app/src/main/kotlin/com/leadaxe/ncx/vpn/BoxApplication.kt")
 src = p.read_text()
 src = src.replace(
     "Seq.setContext(application)",
@@ -92,9 +92,9 @@ echo "── 5 trials ──"
 for i in 1 2 3 4 5; do
   echo "─── Trial $i ───"
   adb -s "$DEVICE" logcat -c
-  adb -s "$DEVICE" shell am force-stop com.leadaxe.lxbox
+  adb -s "$DEVICE" shell am force-stop com.leadaxe.ncx
   sleep 2
-  adb -s "$DEVICE" shell am start -n com.leadaxe.lxbox/.MainActivity > /dev/null
+  adb -s "$DEVICE" shell am start -n com.leadaxe.ncx/.MainActivity > /dev/null
   sleep 12
   echo "[G7 marker]:"
   adb -s "$DEVICE" logcat -d 2>&1 | grep -E "G7" | head -2

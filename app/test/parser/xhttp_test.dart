@@ -1,8 +1,8 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/node_warning.dart';
-import 'package:lxbox/models/template_vars.dart';
-import 'package:lxbox/models/transport_spec.dart';
-import 'package:lxbox/services/parser/transport.dart';
+import 'package:ncx_tunnel/models/node_warning.dart';
+import 'package:ncx_tunnel/models/template_vars.dart';
+import 'package:ncx_tunnel/models/transport_spec.dart';
+import 'package:ncx_tunnel/services/parser/transport.dart';
 
 /// §097 — XHTTP (Xray splithttp) нативный transport. По образцу
 /// singbox-launcher SPEC 071: parse (URI camelCase + snake) → emit → round-trip,

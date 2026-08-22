@@ -4,9 +4,9 @@ import 'dart:io';
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:lxbox/models/channel.dart';
-import 'package:lxbox/models/custom_rule.dart';
-import 'package:lxbox/services/settings_storage.dart';
+import 'package:ncx_tunnel/models/channel.dart';
+import 'package:ncx_tunnel/models/custom_rule.dart';
+import 'package:ncx_tunnel/services/settings_storage.dart';
 
 /// §125 F4.5 + §202 — лечение dangling channel-ссылок в STORAGE (не только в
 /// выхлопе билдера). Когда канал перестаёт быть валидной route-мишенью
@@ -19,11 +19,11 @@ void main() {
   late Directory tmp;
   const channel = MethodChannel('plugins.flutter.io/path_provider');
 
-  String mainPath() => '${tmp.path}/lxbox_settings.json';
+  String mainPath() => '${tmp.path}/ncx_settings.json';
 
   setUp(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    tmp = await Directory.systemTemp.createTemp('lxbox_heal_refs_');
+    tmp = await Directory.systemTemp.createTemp('ncx_heal_refs_');
     TestDefaultBinaryMessengerBinding.instance.defaultBinaryMessenger
         .setMockMethodCallHandler(channel, (call) async {
       if (call.method == 'getApplicationDocumentsDirectory' ||

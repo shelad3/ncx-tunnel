@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/screens/dns_server_edit/edit_controller.dart';
-import 'package:lxbox/vpn/cc_channel.dart';
+import 'package:ncx_tunnel/screens/dns_server_edit/edit_controller.dart';
+import 'package:ncx_tunnel/vpn/cc_channel.dart';
 
 /// §312 — форма DNS-группы: round-trip body↔поля, переходы режимов,
 /// duration-валидация; маппинг CcDnsGroup.

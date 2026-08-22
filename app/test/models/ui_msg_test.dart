@@ -2,12 +2,12 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/node_warning.dart';
-import 'package:lxbox/models/stop_reason.dart';
-import 'package:lxbox/models/ui_msg.dart';
-import 'package:lxbox/models/validation.dart';
-import 'package:lxbox/services/l10n/get_local_text.dart';
-import 'package:lxbox/services/l10n/plural_resolver.dart';
+import 'package:ncx_tunnel/models/node_warning.dart';
+import 'package:ncx_tunnel/models/stop_reason.dart';
+import 'package:ncx_tunnel/models/ui_msg.dart';
+import 'package:ncx_tunnel/models/validation.dart';
+import 'package:ncx_tunnel/services/l10n/get_local_text.dart';
+import 'package:ncx_tunnel/services/l10n/plural_resolver.dart';
 
 // §285 — sealed UiMsg: равенство по данным, рендер по локали (через
 // GetLocalText, не ARB), стабильность renderEn() (machine-поверхности не

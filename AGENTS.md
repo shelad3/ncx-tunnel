@@ -1,37 +1,40 @@
-# Руководство для агентов (L×Box)
+# Agent guide (NCX Tunnel)
 
-Правила для AI-агентов и автоматизации, работающих с этим репозиторием.
+Rules for AI agents and automation working in this repository.
 
-## Git: коммиты и отправка на сервер
+## Git: commits and pushing
 
-**Завершённую работу коммитить сразу** (решение оператора, 24.07.2026): атомарный коммит в `develop` с содержательным сообщением, как только изменение закончено и проверено (тесты/analyze). `git add` — **точечно по своим файлам**, никогда `git add .` (параллельные сессии оставляют в дереве чужую незакоммиченную работу — её не трогать).
+- Work happens on **`ncx/develop`**. `main` mirrors upstream L×Box releases
+  and must stay pristine for merges; do not commit feature work to `main`.
+- Commit finished, verified work (analyze/tests green) as atomic commits with
+  meaningful messages. Stage files explicitly — never `git add .`.
+- Never rewrite published history; never push `--force`; tags are reserved for
+  the release process.
+- Upstream remote: `upstream` (https://github.com/Leadaxe/LxBox).
+  Origin: https://github.com/shelad3/ncx-tunnel
 
-Push в `develop` допустим вместе с завершением работы. **Только по явной команде оператора:**
+## GPL compliance (hard rule)
 
-- `git push --force` и любое переписывание опубликованной истории;
-- всё, что касается `main` и тегов `vX.Y.Z` (это релизный процесс — `docs/RELEASE_PROCESS.md`);
-- `gh pr create` и прочая публикация вовне.
+This is a GPL-3.0 fork of L×Box linking GPL libbox. Every change must:
 
-Незавершённую/непроверенную работу не коммитить — сначала цикл код → проверка (для device-фич: APK → подтверждение оператора).
+- preserve copyright notices and license headers;
+- be documented in `MODIFICATIONS.md` when substantial;
+- never introduce proprietary code, secrets, keystores or private credentials;
+- keep attribution (About screen credits, NOTICE, THIRD_PARTY_LICENSES.md).
 
-## Ветки
+## UI language
 
-- **`develop`** — основная ветка разработки. Все feature/fix идут сюда (напрямую или через feature-ветки → PR в `develop`).
-- **`main`** — релизная ветка. Сюда пишем только **когда готовим релиз**: merge из `develop`, финальные правки заметок / `pubspec.yaml`, тег `vX.Y.Z`, автоматический бот-коммит `docs/latest.json`. Feature-работа в `main` — нет.
-- **Теги `vX.Y.Z`** — только на коммитах в `main`. Полный протокол — `docs/RELEASE_PROCESS.md`.
+User-facing product text is **English only** (screens, menus, buttons,
+dialogs, snackbars, notifications, errors). Russian may exist only in the
+inherited localization asset until proper i18n replaces it. Documentation,
+code comments and commit messages may be any language the author prefers
+(upstream heritage is Russian).
 
-Если не указано иное, при работе над задачей исходить из того, что текущая ветка — `develop` (или feature-ветка от неё). Переключаемся на `main` только на время релиз-подготовки.
+## Verification before commit
 
-## Язык интерфейса
+```bash
+cd app && flutter analyze && flutter test
+```
 
-**Базовый язык интерфейса — английский, и он единственный.** Весь пользовательский текст приложения — экраны, меню, кнопки, надписи, подсказки, диалоги, snackbar'ы, push-уведомления, сообщения об ошибках, пустые состояния — пишется **только по-английски**.
-
-- Новый UI-текст добавляем **на английском** (литералом в коде или через будущий механизм локализации) — **никогда** по-русски или на другом языке.
-- Другие языки допустимы **только когда и если** будет вводиться полноценная локализация (i18n). До этого второго языка в интерфейсе нет.
-- Это касается **только продуктового текста в приложении**. Документация, спеки, комментарии в коде, сообщения коммитов и общение в чате — на русском.
-
-Подробнее — `docs/DEVELOPMENT_GUIDE.md` → «Архитектурные принципы → 5. Язык интерфейса».
-
-## Прочее
-
-Дополнительные правила по мере появления — дополнять этот файл по указанию оператора.
+Device-dependent features additionally require an APK build and manual
+confirmation.

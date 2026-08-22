@@ -2,10 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/services.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/node_spec.dart';
-import 'package:lxbox/models/server_list.dart';
-import 'package:lxbox/services/probe/probe_config.dart';
-import 'package:lxbox/services/probe/probe_runner.dart';
+import 'package:ncx_tunnel/models/node_spec.dart';
+import 'package:ncx_tunnel/models/server_list.dart';
+import 'package:ncx_tunnel/services/probe/probe_config.dart';
+import 'package:ncx_tunnel/services/probe/probe_runner.dart';
 
 /// §236 — headless probe: конфиг, раннер (probe-сессия; при живом VPN —
 /// маркер-гейт, боевое ядро НЕ зовётся), пороги шкалы.
@@ -107,7 +107,7 @@ void main() {
   });
 
   group('§236 ProbeRunner (mock method channel)', () {
-    const channel = MethodChannel('com.leadaxe.lxbox/methods');
+    const channel = MethodChannel('com.nativecodex.ncxtunnel/methods');
     final calls = <MethodCall>[];
     String probeStartAnswer = '';
 

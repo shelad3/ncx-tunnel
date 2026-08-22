@@ -118,7 +118,7 @@ echo "→ APK:    $APK ($(du -h "$APK" | cut -f1))"
 
 # ─── Install ──────────────────────────────────────────────────────
 
-PKG="com.leadaxe.lxbox"
+PKG="com.leadaxe.ncx"
 
 echo "→ Installing..."
 INSTALL_OUTPUT=$(adb -s "$DEVICE" install -r "$APK" 2>&1)

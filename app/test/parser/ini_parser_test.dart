@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/services/parser/body_decoder.dart';
-import 'package:lxbox/services/parser/ini_parser.dart';
-import 'package:lxbox/services/parser/parse_all.dart';
-import 'package:lxbox/services/parser/uri_parsers.dart';
+import 'package:ncx_tunnel/services/parser/body_decoder.dart';
+import 'package:ncx_tunnel/services/parser/ini_parser.dart';
+import 'package:ncx_tunnel/services/parser/parse_all.dart';
+import 'package:ncx_tunnel/services/parser/uri_parsers.dart';
 
 void main() {
   group('parseWireguardIni', () {

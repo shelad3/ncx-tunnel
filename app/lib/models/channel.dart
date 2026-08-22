@@ -1,7 +1,7 @@
 // §125 — Настраиваемые каналы роутинга.
 //
 // `Channel` заменяет статичный `PresetGroup` из `wizard_template.json` как
-// source-of-truth: каналы переезжают из template в `lxbox_settings.json`
+// source-of-truth: каналы переезжают из template в `ncx_settings.json`
 // (`channels[]`). Template остаётся seed'ом для первого запуска (см. миграцию
 // в `settings_storage/channels.dart`).
 //

@@ -1,5 +1,5 @@
-name: lxbox
-description: L×Box — Android VPN client (sing-box / libbox CommandClient).
+name: ncx_tunnel
+description: NCX Tunnel — Android VPN client (sing-box / libbox CommandClient).
 publish_to: 'none'
 
 version: 2.20.12+22012500

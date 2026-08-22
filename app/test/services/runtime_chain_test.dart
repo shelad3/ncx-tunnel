@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/channel.dart';
-import 'package:lxbox/models/config_node.dart';
-import 'package:lxbox/services/runtime_chain.dart';
+import 'package:ncx_tunnel/models/channel.dart';
+import 'package:ncx_tunnel/models/config_node.dart';
+import 'package:ncx_tunnel/services/runtime_chain.dart';
 
 /// §258 — рантайм-цепочка detour по собранному конфигу: порядок пакета,
 /// продолжение через выбор селектора, каналы (tag/autoTag), гейты

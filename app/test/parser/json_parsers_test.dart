@@ -2,10 +2,10 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/node_spec.dart';
-import 'package:lxbox/models/template_vars.dart';
-import 'package:lxbox/services/node_identity.dart';
-import 'package:lxbox/services/parser/json_parsers.dart';
+import 'package:ncx_tunnel/models/node_spec.dart';
+import 'package:ncx_tunnel/models/template_vars.dart';
+import 'package:ncx_tunnel/services/node_identity.dart';
+import 'package:ncx_tunnel/services/parser/json_parsers.dart';
 
 void main() {
   group('parseSingboxEntry', () {

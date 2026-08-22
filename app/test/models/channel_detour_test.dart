@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/config/consts.dart';
-import 'package:lxbox/models/channel.dart';
+import 'package:ncx_tunnel/config/consts.dart';
+import 'package:ncx_tunnel/models/channel.dart';
 
 /// §248/§274 — parse-гейт detour-инвариантов в Channel.fromJson: restore из
 /// backup и ручная правка файла пишут raw JSON мимо UI/storage/API — read-time

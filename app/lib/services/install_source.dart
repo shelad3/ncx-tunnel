@@ -23,13 +23,13 @@ class InstallSourceResolver {
 
   static const _channel = MethodChannel(PlatformChannels.utils);
 
-  /// Значение из `--dart-define=LXBOX_DISTRIBUTION=play|fdroid|github`.
+  /// Значение из `--dart-define=NCX_DISTRIBUTION=play|fdroid|github`.
   /// Ставится в CI (github/play) и в рецепте fdroiddata (fdroid).
   ///
   /// Это НЕ откат §065/§066: там убирались *версионные* маркеры — версия
   /// переехала в pubspec, у факта появился единственный источник истины.
   /// Канал доставки в pubspec выразить нельзя.
-  static const _define = String.fromEnvironment('LXBOX_DISTRIBUTION');
+  static const _define = String.fromEnvironment('NCX_DISTRIBUTION');
 
   static InstallSource _current = InstallSource.github;
   static bool _initialized = false;
@@ -49,7 +49,7 @@ class InstallSourceResolver {
         return;
       }
       AppLog.I.warning(
-          'InstallSource: unknown LXBOX_DISTRIBUTION="$_define" — using github');
+          'InstallSource: unknown NCX_DISTRIBUTION="$_define" — using github');
       return;
     }
     String? installer;

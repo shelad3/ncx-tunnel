@@ -1,16 +1,16 @@
 import 'dart:async';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/services/debug/context.dart';
-import 'package:lxbox/services/debug/contract/errors.dart';
-import 'package:lxbox/services/debug/debug_registry.dart';
-import 'package:lxbox/services/debug/transport/middleware/auth.dart';
-import 'package:lxbox/services/debug/transport/middleware/error_mapper.dart';
-import 'package:lxbox/services/debug/transport/middleware/host_check.dart';
-import 'package:lxbox/services/debug/transport/middleware/timeout.dart';
-import 'package:lxbox/services/debug/transport/pipeline.dart';
-import 'package:lxbox/services/debug/transport/request.dart';
-import 'package:lxbox/services/debug/transport/response.dart';
+import 'package:ncx_tunnel/services/debug/context.dart';
+import 'package:ncx_tunnel/services/debug/contract/errors.dart';
+import 'package:ncx_tunnel/services/debug/debug_registry.dart';
+import 'package:ncx_tunnel/services/debug/transport/middleware/auth.dart';
+import 'package:ncx_tunnel/services/debug/transport/middleware/error_mapper.dart';
+import 'package:ncx_tunnel/services/debug/transport/middleware/host_check.dart';
+import 'package:ncx_tunnel/services/debug/transport/middleware/timeout.dart';
+import 'package:ncx_tunnel/services/debug/transport/pipeline.dart';
+import 'package:ncx_tunnel/services/debug/transport/request.dart';
+import 'package:ncx_tunnel/services/debug/transport/response.dart';
 
 DebugContext _ctx() => DebugContext(
       registry: DebugRegistry.I,

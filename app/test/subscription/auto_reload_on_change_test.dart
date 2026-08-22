@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/server_list.dart';
-import 'package:lxbox/services/subscription/auto_updater.dart';
+import 'package:ncx_tunnel/models/server_list.dart';
+import 'package:ncx_tunnel/services/subscription/auto_updater.dart';
 
 /// §338 — галка «автоперезапуск VPN при смене настроек».
 ///

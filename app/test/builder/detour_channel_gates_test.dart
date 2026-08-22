@@ -1,11 +1,11 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/channel.dart';
-import 'package:lxbox/models/custom_rule.dart';
-import 'package:lxbox/models/parser_config.dart';
-import 'package:lxbox/models/server_list.dart';
-import 'package:lxbox/models/validation.dart';
-import 'package:lxbox/services/builder/build_config.dart';
-import 'package:lxbox/services/parser/uri_parsers.dart';
+import 'package:ncx_tunnel/models/channel.dart';
+import 'package:ncx_tunnel/models/custom_rule.dart';
+import 'package:ncx_tunnel/models/parser_config.dart';
+import 'package:ncx_tunnel/models/server_list.dart';
+import 'package:ncx_tunnel/models/validation.dart';
+import 'package:ncx_tunnel/services/builder/build_config.dart';
+import 'package:ncx_tunnel/services/parser/uri_parsers.dart';
 
 /// §248/§274 — detour-каналы в билдере. §274 сменил семантику isDetour с
 /// «роли» на «разрешение»: block-опция совместима с detour, route_final и

@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/channel.dart';
-import 'package:lxbox/models/server_list.dart';
-import 'package:lxbox/widgets/detour_target_picker.dart';
+import 'package:ncx_tunnel/models/channel.dart';
+import 'package:ncx_tunnel/models/server_list.dart';
+import 'package:ncx_tunnel/widgets/detour_target_picker.dart';
 
 /// §248 — фильтрация канальной секции пикера цели detour
 /// (pure-хелпер [visibleDetourChannels]): только enabled detour-каналы,

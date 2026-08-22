@@ -1,15 +1,15 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/config/consts.dart';
-import 'package:lxbox/models/emit_context.dart';
-import 'package:lxbox/models/parser_config.dart';
-import 'package:lxbox/models/server_list.dart';
-import 'package:lxbox/models/singbox_entry.dart';
-import 'package:lxbox/models/template_vars.dart';
-import 'package:lxbox/services/builder/build_config.dart';
-import 'package:lxbox/services/builder/rule_set_registry.dart';
-import 'package:lxbox/services/builder/server_list_build.dart';
-import 'package:lxbox/services/node_hash.dart';
-import 'package:lxbox/services/parser/uri_parsers.dart';
+import 'package:ncx_tunnel/config/consts.dart';
+import 'package:ncx_tunnel/models/emit_context.dart';
+import 'package:ncx_tunnel/models/parser_config.dart';
+import 'package:ncx_tunnel/models/server_list.dart';
+import 'package:ncx_tunnel/models/singbox_entry.dart';
+import 'package:ncx_tunnel/models/template_vars.dart';
+import 'package:ncx_tunnel/services/builder/build_config.dart';
+import 'package:ncx_tunnel/services/builder/rule_set_registry.dart';
+import 'package:ncx_tunnel/services/builder/server_list_build.dart';
+import 'package:ncx_tunnel/services/node_hash.dart';
+import 'package:ncx_tunnel/services/parser/uri_parsers.dart';
 
 /// §283 — выключенная нода подписки не эмитится в конфиг (но остаётся в
 /// `nodes` для UI), её warnings не сыпятся в emitWarnings; хеш-фильтр

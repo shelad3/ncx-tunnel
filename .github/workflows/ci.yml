@@ -1,4 +1,4 @@
-# LxBox — CI/CD
+# NCX Tunnel — CI/CD
 #
 # Ветки:
 #   - develop — основная ветка разработки (все feature/fix PR'ы)
@@ -455,7 +455,7 @@ jobs:
           path: release-artifacts
 
       - name: Prepare APKs
-        # Renames per-ABI / universal files to LxBox-vX.Y.Z-<variant>.apk
+        # Renames per-ABI / universal files to NCX Tunnel-vX.Y.Z-<variant>.apk
         # для консистентности с прошлыми релизами (UpdateChecker парсит имя).
         run: |
           set -euo pipefail
@@ -466,21 +466,21 @@ jobs:
               echo "ERROR: APK for variant=$VARIANT not found!"
               exit 1
             fi
-            cp "$SRC" "LxBox-${VERSION}-${VARIANT}.apk"
+            cp "$SRC" "NCX Tunnel-${VERSION}-${VARIANT}.apk"
           done
-          ls -la LxBox-*.apk
+          ls -la NCX Tunnel-*.apk
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ needs.meta.outputs.tag }}
-          name: LxBox ${{ needs.meta.outputs.version }}
+          name: NCX Tunnel ${{ needs.meta.outputs.version }}
           draft: false
           files: |
-            LxBox-${{ needs.meta.outputs.version }}-arm64-v8a.apk
-            LxBox-${{ needs.meta.outputs.version }}-armeabi-v7a.apk
-            LxBox-${{ needs.meta.outputs.version }}-x86_64.apk
-            LxBox-${{ needs.meta.outputs.version }}-universal.apk
+            NCX Tunnel-${{ needs.meta.outputs.version }}-arm64-v8a.apk
+            NCX Tunnel-${{ needs.meta.outputs.version }}-armeabi-v7a.apk
+            NCX Tunnel-${{ needs.meta.outputs.version }}-x86_64.apk
+            NCX Tunnel-${{ needs.meta.outputs.version }}-universal.apk
           body_path: RELEASE_NOTES.md
 
   publish-manifest:
@@ -505,20 +505,20 @@ jobs:
         run: |
           mkdir -p docs
           NOW=$(date -u +"%Y-%m-%dT%H:%M:%SZ")
-          BASE="https://github.com/Leadaxe/LxBox/releases/download/${TAG}"
+          BASE="https://github.com/Leadaxe/NCX Tunnel/releases/download/${TAG}"
           cat > docs/latest.json <<EOF
           {
-            "\$schema": "https://github.com/Leadaxe/LxBox/blob/main/docs/latest.json",
+            "\$schema": "https://github.com/Leadaxe/NCX Tunnel/blob/main/docs/latest.json",
             "tag": "${TAG}",
-            "name": "L×Box ${VERSION}",
+            "name": "NCX Tunnel ${VERSION}",
             "published_at": "${NOW}",
-            "html_url": "https://github.com/Leadaxe/LxBox/releases/tag/${TAG}",
-            "apk_url": "${BASE}/LxBox-${VERSION}-universal.apk",
+            "html_url": "https://github.com/Leadaxe/NCX Tunnel/releases/tag/${TAG}",
+            "apk_url": "${BASE}/NCX Tunnel-${VERSION}-universal.apk",
             "apk_urls": {
-              "arm64-v8a":   "${BASE}/LxBox-${VERSION}-arm64-v8a.apk",
-              "armeabi-v7a": "${BASE}/LxBox-${VERSION}-armeabi-v7a.apk",
-              "x86_64":      "${BASE}/LxBox-${VERSION}-x86_64.apk",
-              "universal":   "${BASE}/LxBox-${VERSION}-universal.apk"
+              "arm64-v8a":   "${BASE}/NCX Tunnel-${VERSION}-arm64-v8a.apk",
+              "armeabi-v7a": "${BASE}/NCX Tunnel-${VERSION}-armeabi-v7a.apk",
+              "x86_64":      "${BASE}/NCX Tunnel-${VERSION}-x86_64.apk",
+              "universal":   "${BASE}/NCX Tunnel-${VERSION}-universal.apk"
             },
             "min_supported": "1.0.0",
             "_comment": "Updated automatically by CI on every release tag push (see .github/workflows/ci.yml). Used by UpdateChecker as a fallback when api.github.com is rate-limited. apk_url = universal fallback (works on any ABI). apk_urls.<abi> = per-architecture optimized variants."

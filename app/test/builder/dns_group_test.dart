@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/validation.dart';
-import 'package:lxbox/services/builder/post_steps.dart';
-import 'package:lxbox/services/builder/validator.dart';
+import 'package:ncx_tunnel/models/validation.dart';
+import 'package:ncx_tunnel/services/builder/post_steps.dart';
+import 'package:ncx_tunnel/services/builder/validator.dart';
 
 /// §312 — DNS-группы (kernel SPEC 033): эмиссионный фильтр членов +
 /// validator (EmptyDnsGroup / BadDnsGroupMember / DnsGroupCycle).

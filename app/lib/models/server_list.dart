@@ -86,7 +86,7 @@ enum SubscriptionOnUpdateAction {
 /// локальный слепок. Инициализируется копией глобальных при включении Custom;
 /// отбрасывается (→ null) при возврате в Default.
 class SubscriptionIdentityOverride {
-  /// User-Agent. Пусто → дефолт из глобала (брендированный `LxBox-android`,
+  /// User-Agent. Пусто → дефолт из глобала (брендированный `NCX-android`,
   /// см. `resolveSubscriptionUserAgent`).
   final String userAgent;
 

@@ -1,10 +1,10 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/import_rule.dart';
-import 'package:lxbox/models/node_spec.dart';
-import 'package:lxbox/models/template_vars.dart';
-import 'package:lxbox/services/node_hash.dart';
-import 'package:lxbox/services/parser/uri_parsers.dart';
-import 'package:lxbox/services/subscription/import_rules.dart';
+import 'package:ncx_tunnel/models/import_rule.dart';
+import 'package:ncx_tunnel/models/node_spec.dart';
+import 'package:ncx_tunnel/models/template_vars.dart';
+import 'package:ncx_tunnel/services/node_hash.dart';
+import 'package:ncx_tunnel/services/parser/uri_parsers.dart';
+import 'package:ncx_tunnel/services/subscription/import_rules.dart';
 
 /// §302 — правила работают над готовым JSON узла (`NodeSpec.emit`), а не над
 /// текстом тела: `emit` одинаков для всех форматов подписки, поэтому одно

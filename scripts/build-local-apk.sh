@@ -69,10 +69,10 @@ fi
 
 cd app
 # §379: без `--split-per-abi` конфликта splits.abi ↔ ndk.abiFilters больше нет,
-# поэтому сужаем native libs из AAR через LXBOX_ABI_FILTER (иначе gradle тянет
+# поэтому сужаем native libs из AAR через NCX_ABI_FILTER (иначе gradle тянет
 # libbox под все 3 ABI и APK раздувается до ~76 MB). `--target-platform`
 # сужает flutter engine + Dart AOT.
-LXBOX_ABI_FILTER=arm64-v8a \
+NCX_ABI_FILTER=arm64-v8a \
   flutter build apk --release --target-platform android-arm64 "$@"
 
 # Без сплита Flutter пишет `app-release.apk`. Переименовываем в привычное

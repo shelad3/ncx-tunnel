@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/services/builder/post_steps.dart';
+import 'package:ncx_tunnel/services/builder/post_steps.dart';
 
 /// §281 — страховочный post-step: fingerprint вне словаря ядра заменяется
 /// на chrome (мусор — с записью для emitWarnings, псевдонимы — молча),

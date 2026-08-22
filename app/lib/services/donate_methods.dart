@@ -73,9 +73,9 @@ class DonateMethods {
 
   static const _asset = 'assets/donate.json';
   static const _url = String.fromEnvironment(
-    'LXBOX_DONATE_URL',
+    'NCX_DONATE_URL',
     defaultValue:
-        'https://raw.githubusercontent.com/Leadaxe/LxBox/main/docs/donate.json',
+        'https://raw.githubusercontent.com/shelad3/ncx-tunnel/main/docs/donate.json',
   );
   static const _httpTimeout = Duration(seconds: 10);
   static const _cacheKey = 'donate_cache_json';
@@ -95,7 +95,7 @@ class DonateMethods {
     final client = httpClientForTesting ?? http.Client();
     try {
       final resp = await client
-          .get(Uri.parse(_url), headers: {'User-Agent': 'LxBox/1.x'})
+          .get(Uri.parse(_url), headers: {'User-Agent': 'NCX Tunnel/1.x'})
           .timeout(_httpTimeout);
       if (resp.statusCode == 200) {
         final parsed = _parse(resp.body);

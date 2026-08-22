@@ -1,12 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/auto_select.dart';
-import 'package:lxbox/models/emit_context.dart';
-import 'package:lxbox/models/node_spec.dart';
-import 'package:lxbox/models/server_list.dart';
-import 'package:lxbox/models/singbox_entry.dart';
-import 'package:lxbox/models/template_vars.dart';
-import 'package:lxbox/services/builder/rule_set_registry.dart';
-import 'package:lxbox/services/builder/server_list_build.dart';
+import 'package:ncx_tunnel/models/auto_select.dart';
+import 'package:ncx_tunnel/models/emit_context.dart';
+import 'package:ncx_tunnel/models/node_spec.dart';
+import 'package:ncx_tunnel/models/server_list.dart';
+import 'package:ncx_tunnel/models/singbox_entry.dart';
+import 'package:ncx_tunnel/models/template_vars.dart';
+import 'package:ncx_tunnel/services/builder/rule_set_registry.dart';
+import 'package:ncx_tunnel/services/builder/server_list_build.dart';
 
 /// §322 — узел автовыбора внутри папки: хранится обычным членом
 /// (`autogroup://` в `raw`), а на билде превращается в `urltest` по членам

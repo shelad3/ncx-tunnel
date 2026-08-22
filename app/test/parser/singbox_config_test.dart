@@ -1,13 +1,13 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/auto_select.dart';
-import 'package:lxbox/models/node_spec.dart';
-import 'package:lxbox/models/node_warning.dart';
-import 'package:lxbox/services/node_identity.dart';
-import 'package:lxbox/services/parser/body_decoder.dart';
-import 'package:lxbox/services/parser/parse_all.dart';
-import 'package:lxbox/services/parser/singbox_config.dart';
+import 'package:ncx_tunnel/models/auto_select.dart';
+import 'package:ncx_tunnel/models/node_spec.dart';
+import 'package:ncx_tunnel/models/node_warning.dart';
+import 'package:ncx_tunnel/services/node_identity.dart';
+import 'package:ncx_tunnel/services/parser/body_decoder.dart';
+import 'package:ncx_tunnel/services/parser/parse_all.dart';
+import 'package:ncx_tunnel/services/parser/singbox_config.dart';
 
 /// §368 — разбор sing-box JSON: паритет с Xray-веткой.
 

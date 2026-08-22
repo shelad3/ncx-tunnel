@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/channel.dart';
-import 'package:lxbox/models/parser_config.dart';
+import 'package:ncx_tunnel/models/channel.dart';
+import 'package:ncx_tunnel/models/parser_config.dart';
 
 void main() {
   group('Channel JSON round-trip', () {

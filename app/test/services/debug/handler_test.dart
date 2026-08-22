@@ -1,13 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/debug_entry.dart';
-import 'package:lxbox/services/app_log.dart';
-import 'package:lxbox/services/debug/context.dart';
-import 'package:lxbox/services/debug/contract/errors.dart';
-import 'package:lxbox/services/debug/debug_registry.dart';
-import 'package:lxbox/services/debug/handlers/logs.dart';
-import 'package:lxbox/services/debug/handlers/ping.dart';
-import 'package:lxbox/services/debug/transport/request.dart';
-import 'package:lxbox/services/debug/transport/response.dart';
+import 'package:ncx_tunnel/models/debug_entry.dart';
+import 'package:ncx_tunnel/services/app_log.dart';
+import 'package:ncx_tunnel/services/debug/context.dart';
+import 'package:ncx_tunnel/services/debug/contract/errors.dart';
+import 'package:ncx_tunnel/services/debug/debug_registry.dart';
+import 'package:ncx_tunnel/services/debug/handlers/logs.dart';
+import 'package:ncx_tunnel/services/debug/handlers/ping.dart';
+import 'package:ncx_tunnel/services/debug/transport/request.dart';
+import 'package:ncx_tunnel/services/debug/transport/response.dart';
 
 /// Handler-тесты без platform-зависимостей.
 ///
@@ -31,7 +31,7 @@ void main() {
       expect(resp, isA<JsonResponse>());
       final body = (resp as JsonResponse).body as Map;
       expect(body['pong'], isTrue);
-      expect(body['server'], 'lxbox-debug');
+      expect(body['server'], 'ncx-debug');
       expect(body['uptime_seconds'], 42);
     });
   });

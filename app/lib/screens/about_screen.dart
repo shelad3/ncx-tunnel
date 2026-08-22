@@ -15,7 +15,7 @@ class AboutScreen extends StatelessWidget {
   const AboutScreen({super.key, this.openDonate = false});
 
   /// §362 — открыть донат-попап сразу после первого кадра: кнопка
-  /// `lxbox://route:donate` в support-ленте ведёт к способам поддержки
+  /// `ncx://route:donate` в support-ленте ведёт к способам поддержки
   /// ВНУТРИ приложения, а не на внешнюю страницу.
   final bool openDonate;
 
@@ -25,6 +25,10 @@ class AboutScreen extends StatelessWidget {
   static const _repoUrl = ProjectLinks.repo;
   static const _singboxUpstreamUrl = ProjectLinks.singboxUpstream;
   static const _singboxLauncherUrl = ProjectLinks.launcher;
+
+  /// Upstream project NCX Tunnel was forked from (GPL-3.0). Attribution is a
+  /// license obligation — do not remove.
+  static const _lxboxUpstreamUrl = 'https://github.com/Leadaxe/LxBox';
 
   // §361 — руководство пользователя на языке интерфейса. Пара RU/EN держится
   // синхронной CI-проверкой парности (tool/docs/parity_check.dart), поэтому
@@ -76,7 +80,7 @@ class AboutScreen extends StatelessWidget {
                 const SizedBox(height: 8),
                 Text(
                   // l10n-exempt: app name
-                  'L×Box',
+                  'NCX Tunnel',
                   style: Theme.of(context).textTheme.headlineSmall?.copyWith(
                         fontWeight: FontWeight.w700,
                       ),
@@ -165,6 +169,16 @@ class AboutScreen extends StatelessWidget {
                 ListTile(
                   leading: const Icon(Icons.person_outline),
                   // l10n-exempt: project name
+                  title: const Text('L×Box'),
+                  subtitle: Text(getLocalText.s(
+                      "App foundation — NCX Tunnel is based on L×Box (GPL-3.0)")),
+                  trailing: const Icon(Icons.open_in_new, size: 18),
+                  onTap: () => ul.UrlLauncher.open(_lxboxUpstreamUrl),
+                ),
+                const Divider(height: 1),
+                ListTile(
+                  leading: const Icon(Icons.person_outline),
+                  // l10n-exempt: project name
                   title: const Text('singbox-launcher'),
                   subtitle: Text(getLocalText.s("Config wizard and parser reference")),
                   trailing: const Icon(Icons.open_in_new, size: 18),
@@ -218,7 +232,7 @@ class AboutScreen extends StatelessWidget {
     showDialog<void>(
       context: context,
       builder: (ctx) => AlertDialog(
-        title: Text(getLocalText.s("Support L×Box")),
+        title: Text(getLocalText.s("Support NCX Tunnel")),
         contentPadding: const EdgeInsets.fromLTRB(24, 16, 24, 0),
         content: SizedBox(
           width: double.maxFinite,

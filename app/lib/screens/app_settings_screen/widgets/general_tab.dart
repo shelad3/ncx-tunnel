@@ -167,7 +167,7 @@ class GeneralTab extends StatelessWidget {
         ListTile(
           leading: const Icon(Icons.touch_app_outlined),
           title: Text(getLocalText.s("Home-screen shortcut")),
-          subtitle: Text(getLocalText.s("Long-press the L×Box icon on your home screen → choose \"Toggle VPN\".")),
+          subtitle: Text(getLocalText.s("Long-press the NCX Tunnel icon on your home screen → choose \"Toggle VPN\".")),
         ),
         const Divider(height: 32),
         Text(getLocalText.s("Updates"),

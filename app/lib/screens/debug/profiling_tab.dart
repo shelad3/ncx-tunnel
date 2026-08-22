@@ -61,8 +61,8 @@ class _ProfilingTabState extends State<ProfilingTab>
               mimeType: p.isText ? 'text/plain' : 'application/octet-stream')
         ],
         text: p.isText
-            ? 'L×Box ${p.label}'
-            : 'L×Box ${p.label} — analyze with: go tool pprof $name',
+            ? 'NCX Tunnel ${p.label}'
+            : 'NCX Tunnel ${p.label} — analyze with: go tool pprof $name',
         subject: name,
       );
     } catch (e) {

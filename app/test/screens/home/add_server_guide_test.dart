@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/config_node.dart';
-import 'package:lxbox/screens/home/widgets/node_list.dart';
+import 'package:ncx_tunnel/models/config_node.dart';
+import 'package:ncx_tunnel/screens/home/widgets/node_list.dart';
 
 /// §328 — предикат полноэкранного гайда «Add a server» на Home.
 ///

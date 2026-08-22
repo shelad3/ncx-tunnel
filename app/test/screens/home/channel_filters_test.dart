@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/screens/home/channel_filters.dart';
+import 'package:ncx_tunnel/screens/home/channel_filters.dart';
 
 /// §083 — unit tests для `ChannelFilters` snapshot class.
 void main() {

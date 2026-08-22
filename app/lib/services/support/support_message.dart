@@ -21,8 +21,8 @@ import 'support_state.dart';
 /// v2 (§356): вместо одной кампании — очередь сообщений с локалями
 /// (`i18n`, en — обязательный фолбэк) и версионным повторным показом
 /// (`since_version`). Подробности выбора — [SupportMessageService.pick].
-/// §357 — кнопка сообщения. [markRead] действует только для lxbox-кнопок
-/// (`lxbox://route:…`/`add:…`): тап закрывает сообщение и по умолчанию
+/// §357 — кнопка сообщения. [markRead] действует только для ncx-кнопок
+/// (`ncx://route:…`/`add:…`): тап закрывает сообщение и по умолчанию
 /// помечает его прочитанным; `"mark_read": false` — не помечать (придёт
 /// снова). Для обычных https-кнопок флаг не используется (они не закрывают
 /// сообщение).
@@ -199,11 +199,11 @@ class SupportMessageService {
 
   /// Прод-канал — main. Для проверки кампании до публикации можно собрать
   /// тестовый APK с override'ом:
-  /// `--dart-define=LXBOX_SUPPORT_URL=https://raw.githubusercontent.com/Leadaxe/LxBox/develop/docs/support.test.json`
+  /// `--dart-define=NCX_SUPPORT_URL=https://raw.githubusercontent.com/shelad3/ncx-tunnel/develop/docs/support.test.json`
   static const _url = String.fromEnvironment(
-    'LXBOX_SUPPORT_URL',
+    'NCX_SUPPORT_URL',
     defaultValue:
-        'https://raw.githubusercontent.com/Leadaxe/LxBox/main/docs/support.json',
+        'https://raw.githubusercontent.com/shelad3/ncx-tunnel/main/docs/support.json',
   );
   static const _httpTimeout = Duration(seconds: 10);
 
@@ -225,7 +225,7 @@ class SupportMessageService {
     final client = httpClientForTesting ?? http.Client();
     try {
       final resp = await client
-          .get(Uri.parse(_url), headers: {'User-Agent': 'LxBox/1.x'})
+          .get(Uri.parse(_url), headers: {'User-Agent': 'NCX Tunnel/1.x'})
           .timeout(_httpTimeout);
       if (resp.statusCode == 200) {
         final f = SupportFeed.fromJson(jsonDecode(resp.body));

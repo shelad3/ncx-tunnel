@@ -4,14 +4,14 @@ import 'dart:convert';
 import 'dart:io';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/custom_rule.dart';
-import 'package:lxbox/services/debug/context.dart';
-import 'package:lxbox/services/debug/debug_registry.dart';
-import 'package:lxbox/services/debug/contract/errors.dart';
-import 'package:lxbox/services/debug/handlers/rules.dart';
-import 'package:lxbox/services/debug/transport/request.dart';
-import 'package:lxbox/services/debug/transport/response.dart';
-import 'package:lxbox/services/settings_storage.dart';
+import 'package:ncx_tunnel/models/custom_rule.dart';
+import 'package:ncx_tunnel/services/debug/context.dart';
+import 'package:ncx_tunnel/services/debug/debug_registry.dart';
+import 'package:ncx_tunnel/services/debug/contract/errors.dart';
+import 'package:ncx_tunnel/services/debug/handlers/rules.dart';
+import 'package:ncx_tunnel/services/debug/transport/request.dart';
+import 'package:ncx_tunnel/services/debug/transport/response.dart';
+import 'package:ncx_tunnel/services/settings_storage.dart';
 import 'package:path_provider_platform_interface/path_provider_platform_interface.dart';
 import 'package:plugin_platform_interface/plugin_platform_interface.dart';
 
@@ -40,7 +40,7 @@ void main() {
 
   setUp(() async {
     TestWidgetsFlutterBinding.ensureInitialized();
-    tempDir = await Directory.systemTemp.createTemp('lxbox-rules-move');
+    tempDir = await Directory.systemTemp.createTemp('ncx-rules-move');
     await Directory('${tempDir.path}/docs').create(recursive: true);
     await Directory('${tempDir.path}/support').create(recursive: true);
     PathProviderPlatform.instance = _FakePathProvider(tempDir.path);

@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/channel.dart';
-import 'package:lxbox/screens/routing_screen/routing_screen_helpers.dart';
+import 'package:ncx_tunnel/models/channel.dart';
+import 'package:ncx_tunnel/screens/routing_screen/routing_screen_helpers.dart';
 
 /// §248/§274 — outbound-опции экрана Routing
 /// ([RoutingHelpers.outboundOptions]): detour-канал — валидная цель

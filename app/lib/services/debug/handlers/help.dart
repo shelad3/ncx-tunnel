@@ -42,7 +42,7 @@ Future<DebugResponse> helpHandler(DebugRequest req, DebugContext ctx) async {
 // для LLM-агентов, шпаргалок, и потенциальных wrapper'ов (MCP etc.).
 
 const _capabilityText = '''
-=== L×Box Debug API ===
+=== NCX Tunnel Debug API ===
 
 Localhost HTTP server for dev introspection and control. Runs inside the
 Flutter app when "Debug API toggle" is enabled in App Settings → Developer.
@@ -55,7 +55,7 @@ Spec: docs/spec/features/031 debug api/spec.md
 
 === Health ===
 
-GET /ping                           Health-check. No auth. → {"pong":true,"server":"lxbox-debug","uptime_seconds":N}
+GET /ping                           Health-check. No auth. → {"pong":true,"server":"ncx-debug","uptime_seconds":N}
 GET /help[?format=text|json]        This map. No auth. text (default) — markdown; json — structured.
 
 === State (read-only) ===
@@ -316,7 +316,7 @@ Cap 50 entries (LRU evict by last_seen). BSSID is normalized to lower-case.
 GET /files/srs/list                            Cached SRS files: [{rule_id, size, mtime}]
 GET /files/srs?ruleId=<id>                     Binary SRS dump (octet-stream)
 GET /files/local?name=<n>                      Whitelisted internal-storage files (cache.db, stderr.log,
-                                               CrashReport-lxbox.log[.old] — Go panics of the core). `/files/external` — legacy alias.
+                                               CrashReport-ncx.log[.old] — Go panics of the core). `/files/external` — legacy alias.
 GET /files/crash/list                          Archived core crash reports: [{name, size, mtime}], newest first
 GET /files/crash?name=<n>                      Body of an archived crash report
 GET /files/oom/list                            Core OOM snapshots: [{name, size, mtime, memory_usage, ...}], newest first
@@ -447,7 +447,7 @@ curl -H "Authorization: Bearer \$TOKEN" 'http://127.0.0.1:9269/logs?level=error,
 ''';
 
 const Map<String, dynamic> _capabilityJson = {
-  'server': 'lxbox-debug',
+  'server': 'ncx-debug',
   'docs': {
     'spec': 'docs/spec/features/031 debug api/spec.md',
   },
@@ -463,7 +463,7 @@ const Map<String, dynamic> _capabilityJson = {
   },
   'endpoints': [
     // Health
-    {'method': 'GET', 'path': '/ping', 'auth': false, 'description': 'Health-check', 'response': '{"pong":true,"server":"lxbox-debug","uptime_seconds":N}'},
+    {'method': 'GET', 'path': '/ping', 'auth': false, 'description': 'Health-check', 'response': '{"pong":true,"server":"ncx-debug","uptime_seconds":N}'},
     {'method': 'GET', 'path': '/help', 'auth': false, 'description': 'This capability map', 'params': {'format': 'text|json (default text)'}},
     // State
     {'method': 'GET', 'path': '/state', 'description': 'HomeState dump (tunnel, groups, nodes, traffic). last_start_error/last_start_error_at — last VPN start/stop failure reason; cleared only by a successful start; in-memory (empty after process restart)'},
@@ -559,7 +559,7 @@ const Map<String, dynamic> _capabilityJson = {
     // Files
     {'method': 'GET', 'path': '/files/srs/list', 'description': 'Cached SRS [{rule_id,size,mtime}]'},
     {'method': 'GET', 'path': '/files/srs', 'params': {'ruleId': 'id'}, 'description': 'Binary SRS dump'},
-    {'method': 'GET', 'path': '/files/local', 'params': {'name': 'cache.db|stderr.log|CrashReport-lxbox.log'}, 'description': 'Whitelisted internal-storage files (filesDir); CrashReport-lxbox.log[.old] = Go panics of the core (§316). `/files/external` — legacy alias.'},
+    {'method': 'GET', 'path': '/files/local', 'params': {'name': 'cache.db|stderr.log|CrashReport-ncx.log'}, 'description': 'Whitelisted internal-storage files (filesDir); CrashReport-ncx.log[.old] = Go panics of the core (§316). `/files/external` — legacy alias.'},
     {'method': 'GET', 'path': '/files/crash/list', 'description': 'Archived core crash reports [{name,size,mtime}], newest first (§316)'},
     {'method': 'GET', 'path': '/files/crash', 'params': {'name': '<file>'}, 'description': 'Body of an archived core crash report (§316)'},
     {'method': 'GET', 'path': '/files/oom/list', 'description': 'Core OOM snapshots [{name,size,mtime,memory_usage,heap_inuse,num_goroutine}], newest first (§318)'},

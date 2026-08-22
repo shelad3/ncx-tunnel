@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/models/custom_rule.dart';
-import 'package:lxbox/models/parser_config.dart';
-import 'package:lxbox/services/rule_transfer.dart';
+import 'package:ncx_tunnel/models/custom_rule.dart';
+import 'package:ncx_tunnel/models/parser_config.dart';
+import 'package:ncx_tunnel/services/rule_transfer.dart';
 
 /// §396 — экспорт/импорт правил файлом: конверт, парс, санация ссылок,
 /// вставка (имя/num). Схема wire-формата — в спеке §396 §3.
@@ -61,7 +61,7 @@ void main() {
         appVersion: '9.9.9+999',
       );
       final decoded = jsonDecode(json) as Map<String, dynamic>;
-      expect(decoded['app'], 'lxbox');
+      expect(decoded['app'], 'ncx');
       expect(decoded['kind'], 'rules');
       expect(decoded['format'], kRulesExportFormatVersion);
       expect(decoded['source_app_version'], '9.9.9+999');
@@ -77,13 +77,13 @@ void main() {
           throwsA(isA<FormatException>()));
       expect(
           () => parseRulesImport(
-              '{"app":"lxbox","kind":"rules","format":1,"rules":[]}'),
+              '{"app":"ncx","kind":"rules","format":1,"rules":[]}'),
           throwsA(isA<FormatException>()));
     });
 
     test('parse отличает бэкап-файл понятной ошибкой', () {
       expect(
-        () => parseRulesImport('{"app":"lxbox","kind":"backup","format":1}'),
+        () => parseRulesImport('{"app":"ncx","kind":"backup","format":1}'),
         throwsA(predicate(
             (e) => e is FormatException && e.message.contains('backup'))),
       );
@@ -92,7 +92,7 @@ void main() {
     test('parse отвергает format из будущего', () {
       expect(
         () => parseRulesImport(
-            '{"app":"lxbox","kind":"rules","format":2,"rules":[{}]}'),
+            '{"app":"ncx","kind":"rules","format":2,"rules":[{}]}'),
         throwsA(predicate(
             (e) => e is FormatException && e.message.contains('newer'))),
       );

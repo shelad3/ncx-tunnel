@@ -1,12 +1,12 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:lxbox/config/consts.dart';
-import 'package:lxbox/models/auto_select.dart';
-import 'package:lxbox/models/channel.dart';
-import 'package:lxbox/models/node_spec.dart';
-import 'package:lxbox/models/parser_config.dart';
-import 'package:lxbox/models/server_list.dart';
-import 'package:lxbox/services/builder/build_config.dart';
-import 'package:lxbox/services/parser/uri_parsers.dart';
+import 'package:ncx_tunnel/config/consts.dart';
+import 'package:ncx_tunnel/models/auto_select.dart';
+import 'package:ncx_tunnel/models/channel.dart';
+import 'package:ncx_tunnel/models/node_spec.dart';
+import 'package:ncx_tunnel/models/parser_config.dart';
+import 'package:ncx_tunnel/models/server_list.dart';
+import 'package:ncx_tunnel/services/builder/build_config.dart';
+import 'package:ncx_tunnel/services/parser/uri_parsers.dart';
 
 /// §125 F1/F2/F3 — билдер собирает outbound-группы из BuildSettings.channels:
 /// per-channel regex node-set, direct/auto-членство из галок, auto-двойник,
