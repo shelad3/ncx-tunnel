@@ -34,8 +34,9 @@ import '../l10n/src/check_common.dart';
 // Запуск: dart run tool/docs/parity_check.dart [--strict]  (из app/)
 
 /// Пары «переведённый файл» ↔ «оригинал». Пути относительно корня репозитория.
+/// NCX: README-пары удалены — документация форка ведётся только на английском.
 const _pairs = <({String en, String ru})>[
-  (en: 'README.md', ru: 'README.ru.md'),
+  (en: 'docs/USER_GUIDE.md', ru: 'docs/USER_GUIDE.ru.md'),
   (en: 'docs/USER_GUIDE.md', ru: 'docs/USER_GUIDE.ru.md'),
   (en: 'docs/DONATE.md', ru: 'docs/DONATE.ru.md'),
   (en: 'docs/PRIVACY_POLICY.md', ru: 'docs/PRIVACY_POLICY.ru.md'),
