@@ -750,6 +750,10 @@
   "App connections": {
     "value": "Соединения приложений"
   },
+
+  "App foundation — NCX Tunnel is based on L×Box (GPL-3.0)": {
+    "value": "Основа приложения — NCX Tunnel создан на базе L×Box (GPL-3.0)"
+  },
   "App info (OEM power settings)": {
     "value": "О приложении (настройки питания OEM)"
   },

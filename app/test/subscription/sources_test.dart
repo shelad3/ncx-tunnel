@@ -194,7 +194,7 @@ void main() {
       ));
       expect(h['User-Agent'], isNotNull);
       expect(h['User-Agent'], isNotEmpty);
-      expect(h['User-Agent'], contains('NCX Tunnel'));
+      expect(h['User-Agent'], contains('NCX-android'));
     });
   });
 }
