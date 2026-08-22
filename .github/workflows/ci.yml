@@ -468,7 +468,7 @@ jobs:
             fi
             cp "$SRC" "NCX Tunnel-${VERSION}-${VARIANT}.apk"
           done
-          ls -la NCX Tunnel-*.apk
+          ls -la "NCX Tunnel-"*.apk
 
       - name: Create GitHub Release
         uses: softprops/action-gh-release@v2
