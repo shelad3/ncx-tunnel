@@ -9,10 +9,10 @@ libbox, GPL-3.0), rebranded and repackaged by
 
 | File | Best for |
 |---|---|
-| `NCX Tunnel-v0.1.0-alpha-arm64-v8a.apk` | Most phones since ~2016 (recommended) |
-| `NCX Tunnel-v0.1.0-alpha-armeabi-v7a.apk` | Older 32-bit phones |
-| `NCX Tunnel-v0.1.0-alpha-x86_64.apk` | Emulators / Chromebooks |
-| `NCX Tunnel-v0.1.0-alpha-universal.apk` | Any device (largest file) |
+| `NCX.Tunnel-v0.1.0-alpha-arm64-v8a.apk` | Most phones since ~2016 (recommended) |
+| `NCX.Tunnel-v0.1.0-alpha-armeabi-v7a.apk` | Older 32-bit phones |
+| `NCX.Tunnel-v0.1.0-alpha-x86_64.apk` | Emulators / Chromebooks |
+| `NCX.Tunnel-v0.1.0-alpha-universal.apk` | Any device (largest file) |
 
 Install: download the APK, allow "install unknown apps" if prompted, open,
 grant VPN permission, add your subscription URL or a `vless://` / link, connect.
