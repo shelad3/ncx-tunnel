@@ -39,5 +39,5 @@ grant VPN permission, add your subscription URL or a `vless://` / link, connect.
 - This fork's changes are documented in
   [MODIFICATIONS.md](https://github.com/shelad3/ncx-tunnel/blob/develop/MODIFICATIONS.md)
 
-SHA-256 (`universal`, pre-CI upload):
-`4ddcc86c1daabd40dda988109c9b79604c670f300570bd4e9222dde029b437f8`
+SHA-256 (`universal`):
+`4959427be6b49b36cecddec9f7d6958e6f10ac617eb08d2a9fc3e02f37cc62a6`
