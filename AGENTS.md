@@ -38,3 +38,19 @@ cd app && flutter analyze && flutter test
 
 Device-dependent features additionally require an APK build and manual
 confirmation.
+
+## Release signing
+
+- The upload keystore lives at `/mnt/link/ncx-tunnel/keys/upload-keystore.jks`
+  (alias `ncx-upload`, 30-year validity). It is the update identity — **never
+  delete, regenerate or commit it**; losing it permanently breaks updates for
+  existing installs. Password is in `keys/.pass` next to it (chmod 700 dir).
+- CI reads it from repo secrets: `ANDROID_KEYSTORE_BASE64`,
+  `ANDROID_KEYSTORE_PASSWORD`, `ANDROID_KEY_PASSWORD`, `ANDROID_KEY_ALIAS`
+  (see `.github/workflows/ci.yml`). Without them builds fall back to debug
+  signing — do not ship those as releases.
+- Local signed builds use `app/android/key.properties` (gitignored) pointing
+  `storeFile` at the keystore path above.
+- Releases are cut by pushing a `v*` tag; if tag-push CI does not fire on this
+  repo, run it manually:
+  `gh workflow run ci.yml --ref <tag> -f run_mode=release`.
