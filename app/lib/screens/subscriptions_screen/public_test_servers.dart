@@ -72,7 +72,15 @@ Future<void> pickPublicTestServer(
             final list = manifest.lists[i];
             return ListTile(
               leading: const Icon(Icons.list_alt),
-              title: Text(getLocalText.s("List %d", i + 1)),
+              // Имя из манифеста; без него — прежний нейтральный «List N».
+              title: Text(list.name ?? getLocalText.s("List %d", i + 1)),
+              subtitle: list.description == null
+                  ? null
+                  : Text(
+                      list.description!,
+                      maxLines: 2,
+                      overflow: TextOverflow.ellipsis,
+                    ),
               dense: true,
               contentPadding: EdgeInsets.zero,
               onTap: () {

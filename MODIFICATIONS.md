@@ -34,3 +34,18 @@ as required by GPL-3.0 §5(a). Upstream: https://github.com/Leadaxe/LxBox
 
 Not yet changed (planned): app theme/colors, splash, final icon design,
 UI information architecture (Phase 2+).
+
+## Phase 2 — Config catalogue (NCX-Configs)
+
+- Community-servers manifest repointed from
+  `shelad3/ncx-tunnel@main` (file never existed on the fork's pristine main;
+  feature was dead) to `shelad3/NCX-Configs@main` — a dedicated public repo
+  whose manifest deletion/emptying acts as a kill-switch.
+- Manifest entries gained optional `name` and `description`; the
+  "Get Public Test Servers" dialog shows them instead of anonymous
+  "List N" labels when present (legacy manifests without the fields keep
+  working unchanged).
+- Added `test/services/community_servers_loader_test.dart`: parsing,
+  kill-switch semantics (HTTP != 200 throws), cache behavior, client
+  ownership.
+

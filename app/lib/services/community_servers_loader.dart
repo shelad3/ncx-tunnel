@@ -4,8 +4,15 @@ import 'package:http/http.dart' as http;
 
 /// Один список тестовых серверов из комьюнити-манифеста.
 class CommunityServerList {
-  const CommunityServerList({required this.source});
+  const CommunityServerList({required this.source, this.name, this.description});
   final String source;
+
+  /// Человекочитимое имя подборки из манифеста (опционально; UI падает назад
+  /// к «List N», когда куратор не задал имя).
+  final String? name;
+
+  /// Короткое описание (опционально; subtitle в диалоге выбора).
+  final String? description;
 }
 
 /// Блок атрибуции (автор подборки + ссылка). Опциональный.
@@ -33,10 +40,13 @@ class CommunityServersLoader {
   CommunityServersLoader._();
 
   static const manifestUrl =
-      'https://raw.githubusercontent.com/shelad3/ncx-tunnel/main/public-servers-manifest.json';
+      'https://raw.githubusercontent.com/shelad3/NCX-Configs/main/public-servers-manifest.json';
   static const _timeout = Duration(seconds: 5);
 
   static CommunityManifest? _cached;
+
+  /// Только для тестов: сбрасывает module-level кэш между кейсами.
+  static void resetForTest() => _cached = null;
 
   /// Грузит манифест. 404 / timeout / parse-error → пробрасывается наверх,
   /// UI решает как сообщить пользователю.
@@ -65,7 +75,16 @@ class CommunityServersLoader {
         : null;
     final lists = (json['lists'] as List<dynamic>? ?? [])
         .whereType<Map<String, dynamic>>()
-        .map((e) => CommunityServerList(source: (e['source'] as String? ?? '').trim()))
+        .map((e) {
+          final name = (e['name'] as String? ?? '').trim();
+          final description = (e['description'] as String? ?? '').trim();
+          return CommunityServerList(
+            source: (e['source'] as String? ?? '').trim(),
+            // Пустые строки → null: UI честно падает назад к «List N».
+            name: name.isEmpty ? null : name,
+            description: description.isEmpty ? null : description,
+          );
+        })
         .where((l) => l.source.isNotEmpty)
         .toList(growable: false);
     _cached = CommunityManifest(attribution: attribution, lists: lists);
